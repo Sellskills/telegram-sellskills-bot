@@ -61,7 +61,8 @@ Score : {score}/15.")
         return ConversationHandler.END
 
 def main():
-    app = ApplicationBuilder().token("YOUR_TELEGRAM_BOT_TOKEN").build()
+    import os
+app = ApplicationBuilder().token(os.getenv("TELEGRAM_TOKEN")).build()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
